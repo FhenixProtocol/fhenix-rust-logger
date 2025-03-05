@@ -78,3 +78,26 @@ Available log levels (from most to least severe):
 - `Info` - Informational messages (default)
 - `Debug` - Debug-level messages
 - `Trace` - Trace-level messages
+
+## Environment Variable Configuration
+
+This library supports the standard `RUST_LOG` environment variable for configuring log levels. When set, `RUST_LOG` will override the level specified in your code.
+
+### Examples
+
+```bash
+# Set all logs to debug level
+RUST_LOG=debug cargo run
+
+# Set specific module to trace level, everything else to info
+RUST_LOG=info,my_module=trace cargo run
+
+# Complex filtering
+RUST_LOG=warn,my_service=info,my_service::critical_component=debug cargo run
+```
+
+The syntax follows the standard format:
+
+- A single level applies to all modules
+- `module_name=level` sets a specific level for a module
+- Multiple directives can be separated by commas
