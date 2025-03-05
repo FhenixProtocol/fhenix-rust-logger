@@ -8,7 +8,7 @@ Add the dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-fhenix-logger = { git = "https://github.com/fhenixprotocol/fhenix-rust-log.git" }
+fhenix-logger = { git = "https://github.com/fhenixprotocol/fhenix-rust-log.git", version = "0.1" }
 ```
 
 ## Usage
